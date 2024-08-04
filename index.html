@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+    <script type="module" src="/src/main.ts" defer></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+  <body>
+    <nav class="nav_all">
+      <div class="nav_header">
+        <div class="title_cnt">
+          <i class="fa-sharp fa-solid fa-grid-2"></i>
+          <p class="title">Foaad 2.0</p>
+        </div>  
+        <p class="desc">2:16PM - Online</p>
+      </div>
+      
+      <div class="nav_main">
+        <a href="#" class="nv_link" id="dashboard">
+          <span class="nv_lnk_text">
+            <svg height="64" id="dashboard" viewBox="0 0 64 64" width="64" xmlns="http://www.w3.org/2000/svg"><path d="m26 35h-20c-1.657 0-3 1.343-3 3v20c0 1.657 1.343 3 3 3h20c1.657 0 3-1.343 3-3v-20c0-1.657-1.343-3-3-3zm0-32h-20c-1.657 0-3 1.343-3 3v20c0 1.657 1.343 3 3 3h20c1.657 0 3-1.343 3-3v-20c0-1.657-1.343-3-3-3zm32 0h-20c-1.657 0-3 1.343-3 3v20c0 1.657 1.343 3 3 3h20c1.657 0 3-1.343 3-3v-20c0-1.657-1.343-3-3-3zm0 32h-20c-1.657 0-3 1.343-3 3v20c0 1.657 1.343 3 3 3h20c1.657 0 3-1.343 3-3v-20c0-1.657-1.343-3-3-3z"/></svg>
+            &nbsp;&nbsp;
+          
+            Dashboard
+          </span> 
+        </a>
+        <a href="#" class="nv_link" id="planning">
+          <span class="nv_lnk_text">
+            <i class="fa-solid fa-table-columns"></i>&nbsp;&nbsp;
+            Planning
+          </span>
+        </a>
+        <a href="#" class="nv_link" id="dashboard">
+          <span class="nv_lnk_text">
+            <i class="fa-solid fa-table-columns"></i>&nbsp;&nbsp;
+            Dashboard
+          </span>
+        </a>
+        <a href="#" class="nv_link" id="dashboard">
+          <span class="nv_lnk_text">
+            <i class="fa-solid fa-table-columns"></i>&nbsp;&nbsp;
+            Dashboard
+          </span>
+        </a>
+        <a href="#" class="nv_link" id="settings">
+          <span class="nv_lnk_text">
+            <i class="fa-solid fa-gear"></i>&nbsp;&nbsp;
+            Settings
+          </span>
+        </a>
+      </div>  
+
+      <div class="nav_footer">
+        <p id="quote">
+          <i class="fa-solid fa-quote-left"></i>
+            You always have to work 3 degrees above the median
+          <i class="fa-solid fa-quote-right"></i>
+        </p> 
+      </div>
+    </nav>
+
+    <main class="main">
+      <iframe class="main_dsp" src="./dashboard/index.html" id="main_frame"></iframe>
+    </main>
+    
+  </body>
+</html>
