@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+    <script type="module" src="/src/main.ts" defer></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <header class="header">
+        <h1 class="big_title">Plan your day !</h1>
+        <h3 class="title_desc">
+            You currently have 
+            <strong id="hours_unplaned" class="r0">
+                8h35min
+            </strong>
+            unplanned time.
+        </h3>
+    </header>
+
+    <section class="tasks_sect">
+        <div class="recommended">
+            <h3 class="sect_title">Recommended tasks :</h3>
+            <ul class="sect_list">
+                <li class="list_e"><a class="link">• Lorem ipsum dolor sit amet. (Due in <strong class="r0" id="due_time">5hrs</strong>)</a></li>
+                <li class="list_e"><a class="link">• Architecto optio earum inventore unde. (Due in <strong class="y1" id="due_time">12hrs</strong>)</a></li>
+                <li class="list_e"><a class="link">• Alias provident saepe repudiandae veritatis. (Due in <strong class="g0" id="due_time">2days</strong>)</a>  </li>
+                <li class="list_e"><a class="link">• Et tempora voluptas obcaecati odit? (Due in <strong class="g0" id="due_time">2days</strong>)</li>
+                <li class="list_e"><a class="link">• Reiciendis, ullam. Iusto, laudantium tempore? (Due in <strong class="g1" id="due_time">5days</strong>)</a> </li>
+            </ul>
+        </div>
+        <div class="add_task">
+            <h3 class="sect_title">Add task</h3>
+            <i class="fa-solid fa-plus"></i>
+        </div>
+    </section>
+
+    <section class="prog_hab">
+        <div class="habits">
+            <h3 class="sect_title">Ongoing habits :</h3>
+            <ul class="sect_list">
+                <li class="list_e"><a class="link">• Lorem ipsum dolor sit amet. (<span class="h_time">11:00 ---> 12:00</span>)</a></li>
+                <li class="list_e"><a class="link">• Ea debitis facilis consequatur eveniet! (<span class="h_time">11:00 ---> 12:00</span>)</a></li>
+                <li class="list_e"><a class="link">• Amet error quis eveniet unde. (<span class="h_time">11:00 ---> 12:00</span>)</a></li>
+                <li class="list_e"><a class="link">• Aspernatur molestiae at optio iusto. (<span class="h_time">11:00 ---> 12:00</span>)</a></li>
+                <li class="list_e"><a class="link">• Et modi illum harum repellendus? (<span class="h_time">11:00 ---> 12:00</span>)</a></li>
+            </ul>
+            <button class="add_btn">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+        <div class="programs">
+            <h3 class="sect_title">Ongoing programs : </h3>
+            <ul class="program_list">
+                <li class="program">
+                    <a class="program_l">
+                        • Lorem ipsum dolor sit.
+                    </a>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </li>
+                <li class="program">
+                    <a class="program_l">
+                        • Exercitationem similique temporibus deserunt.
+                    </a>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </li>
+                <li class="program">
+                    <a class="program_l">
+                        • Deleniti ut cumque nostrum!
+                    </a>
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </li>
+            </ul>
+            <button class="add_btn">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <button class="leisure_btn">
+            <i class="fa-solid fa-plus"></i>&nbsp;
+            Add a leisure.
+        </button>
+        <button class="notion_btn">
+            <i class="fa-solid fa-gear"></i>&nbsp;
+            Link to Notion
+            <!-- TODO: Add notion integration -->
+        </button>
+        <button class="reward_btn">
+            <i class="fa-solid fa-gift"></i>&nbsp;
+            Withdraw a reward code.
+        </button>
+    </footer>
+  </body>
+</html>
