@@ -7,8 +7,8 @@
     "withGlobalTauri": true
   },
   "package": {
-    "productName": "foaad",
-    "version": "0.0.0"
+    "productName": "Foaad",
+    "version": "0.2.0"
   },
   "tauri": {
     "systemTray" : {
@@ -24,7 +24,7 @@
     },
     "windows": [
       {
-        "title": "foaad",
+        "title": "Foaad",
         "width" : 1920,
         "height": 1048
       }
@@ -35,7 +35,7 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.tauri.dev",
+      "identifier": "com.foaad.dev",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
