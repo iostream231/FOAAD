@@ -138,7 +138,7 @@ mod database {
 
             let query = "SELECT state FROM planned WHERE start_time < ? < end_time";
             let mut statement = cnt.prepare(query).unwrap();
-            statement.bind((1, time));
+            statement.bind((1, time)).unwrap();
 
             if let Ok(State::Row) = statement.next() {
                 let res : Vec<i64> = serde_json::from_str(&statement.read::<String, _>("state").unwrap()).unwrap();

@@ -30,6 +30,7 @@
 body { 
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 100%;
   
@@ -116,6 +117,7 @@ body {
     flex-direction: column;
     background-color: var(--bg_acc_color);
     border-radius: 6px;
+    border: none;
 }
 
 .tasks_sect > .add_task > i {
@@ -236,4 +238,214 @@ body {
     color : var(--text_color);
     background-color: var(--sec_color);
     transition: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+
+
+
+
+
+/* ############################################################################################## */
+/* Add task form */
+.blur_container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: block; /* DEFAULT : NONE */
+    z-index: 1;
+    backdrop-filter: blur(.5rem);
+    
+}
+.task_form {
+    display: flex; /* DEFAULT : NONE */
+    position: fixed;
+    width: 80%;
+    background-color: var(--bg_acc_color);
+    z-index: 2;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.task_form > .form_header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--th_color);
+    
+}
+.task_form > .form_header > .header1 {
+    color : var(--text_color);
+    display: flex;
+    align-items: baseline;
+    padding: .65rem;
+    font-family: 'Nunito', sans-serif;
+}
+.task_form > .form_header > i {
+    color : var(--text_color);
+    font-size: 1.5rem;
+    padding: .65rem;
+}
+.task_form > .form_header > i:hover {
+    background-color: var(--red1);
+    cursor: pointer;
+}
+
+.form_main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* gap: .1rem */
+}
+.text_wrap {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    padding: 1rem;
+}
+.form_main > .text_wrap > label {
+    color : var(--text_color);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    margin-left: 1rem;
+}
+.title_inp {
+    width: 90%;
+    border-radius: 4px;
+    padding: .5rem 1rem;
+    border: 1px solid var(--sec_color);
+    background: none;
+    outline: none;
+    color : var(--text_color);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    
+
+}
+.form_main > .text_wrap > .title_inp:focus {
+    transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-color: var(--th_color);
+}
+
+.form_main > .time_selectors {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin : 2rem;
+}
+
+.current_time {
+    margin-bottom: 2rem;
+    color : var(--text_sec_color);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+}
+
+.dur_inp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.dur_title {
+    /* margin-bottom: 2rem; */
+    font-size: 1.25rem;
+    font-family: 'Nunito', sans-serif;
+    color : var(--text_color);
+    text-decoration: underline;
+}
+
+.time_selector {
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    background-image: conic-gradient(
+        var(--th_color) 70deg,
+        /* lightblue 0 235deg, */
+        var(--bg_color) 0
+    );
+    border-radius: 9999rem;
+
+}
+
+
+.cursor {
+    /* position: relative; */
+    position: fixed;
+
+    /* transform: rotate(90deg); */
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    width: 1rem;
+    user-select: none;
+    transform: rotate(90deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color : var(--text_color);
+    
+}
+
+
+
+.due_sel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.due_sel > label {
+    /* margin-bottom: 1rem; */
+}
+
+.due_sel > .inp_cnt {
+    display: flex;
+    gap : .5rem;
+}
+
+.due_sel > .inp_cnt > input {
+    color-scheme: dark;
+    padding: .4rem;
+    /* margin: .7rem; */
+    font-size: 1.25rem;
+    font-family: 'Nunito';
+    width: 80%;
+    outline: none;
+}
+.due_sel > input:focus {
+    border : 1px solid var(--prim_color)
+}
+
+.except_cnt {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.except_cnt > label {
+    text-align: center;
+}
+.except_cnt > ul {
+    padding: .5rem;
+}
+.except_cnt > ul > li {
+    font-family: 'Nunito', sans-serif;
+    color : var(--text_color);
+    padding: .25rem;
+    display: flex;
+    justify-content: baseline;
+}
+.except_cnt > ul > li > input {
+    accent-color: var(--th_color);
+    cursor: pointer;
+    width: 1.5rem;
+    color-scheme: dark;
 }
