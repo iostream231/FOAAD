@@ -407,10 +407,6 @@ body {
     gap: .5rem;
 }
 
-.due_sel > label {
-    /* margin-bottom: 1rem; */
-}
-
 .due_sel > .inp_cnt {
     display: flex;
     gap : .5rem;
