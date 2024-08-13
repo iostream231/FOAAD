@@ -97,14 +97,14 @@
         </button>
     </footer>
 
-    <div class="blur_container"></div>
+    <div class="blur_container" id="blur_container"></div>
     <div id="task_form" class="task_form">
         <header class="form_header">
             <h3 class="header1">
                 <i class="fa-solid fa-plus"></i>&nbsp;&nbsp;
                 New task
             </h3>
-            <i class="fa-solid fa-xmark"></i>
+            <i class="fa-solid fa-xmark" id="task_form_x"></i>
         </header>
 
         <form class="form_main">
@@ -150,6 +150,8 @@
                     </div>
                 </div>
             </div>
+
+            <button type="submit" class="task_sub_btn">Create</button>
         </form>
         
     </div>

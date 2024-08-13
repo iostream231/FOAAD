@@ -1,20 +1,50 @@
 window.addEventListener('DOMContentLoaded', () => {
-
+    // Task form setup
     const task_add_btn = document.getElementById("add_task") as HTMLButtonElement;
+    task_add_btn.addEventListener('mousedown', () => {
+        // Make the the task form appear
+        const task_form = document.getElementById("task_form") as HTMLDivElement;
+        const blur_container = document.getElementById("blur_container") as HTMLDivElement;
+        task_form.style.display = "flex";
+        blur_container.style.display = 'block';
+
+
+
+        // Set Duration selector
+        const time_sel = document.getElementById("time_selector") as HTMLDivElement;
+        const start_rect = time_sel.getBoundingClientRect();
+        const cursor = document.getElementById("cursor") as HTMLDivElement;
+        const cursor_rect = cursor.getBoundingClientRect();
+        const current_time_elem = document.getElementById("current_time") as HTMLHeadingElement;
+        
+        set_cursor_deg(cursor, current_time_elem, cursor_rect, start_rect, time_sel, 0);
+        cursor.addEventListener('mousedown',  (ev) => drag_cursor(ev, cursor, current_time_elem, cursor_rect, start_rect, time_sel));
+
+
+        // Set the close button
+        const close_btn = document.getElementById("task_form_x") as HTMLElement;
+        close_btn.addEventListener('mousedown', (ev) => {
+            // Clearing event listeners
+            let new_cursor = cursor.cloneNode(true);
+            cursor.parentElement?.replaceChild(new_cursor, cursor);
+            
+            task_form.style.display = blur_container.style.display = "none";
+        });
+
+    })
+
+
+
+
     const habit_add_btn = document.getElementById("add_habit") as HTMLButtonElement;
     const program_add_btn = document.getElementById("add_program") as HTMLButtonElement;
 
-    // program_add_btn.addEventListener('mouse')
-    const time_sel = document.getElementById("time_selector") as HTMLDivElement;
-    const start_rect = time_sel.getBoundingClientRect();
-    const cursor = document.getElementById("cursor") as HTMLDivElement;
-    const cursor_rect = cursor.getBoundingClientRect();
-    const current_time_elem = document.getElementById("current_time") as HTMLHeadingElement;
-    
-    set_cursor_deg(cursor, current_time_elem, cursor_rect, start_rect, time_sel, 0);
-    cursor.addEventListener('mousedown',  (ev) => drag_cursor(ev, cursor, current_time_elem, cursor_rect, start_rect, time_sel));
 
-    // console.log("HI");
+
+
+
+
+
 })
 
 const COMMON_ANGLES = [0, Math.PI/4, Math.PI / 2, 3 * Math.PI / 4, Math.PI, 3 * Math.PI / 2];
@@ -58,10 +88,10 @@ function set_cursor_deg(cursor, current_time_elem : HTMLHeadingElement, cursor_r
 let is_cursor_down = false;
 let prev_angle = 0;
 let rad_to_deg = (rad) => {return rad * 180 / Math.PI};
-function drag_cursor(event, cursor, current_time_elem,cursor_rect, start_rect, time_sel) {
-    
+function drag_cursor(event, cursor : HTMLDivElement, current_time_elem,cursor_rect, start_rect, time_sel) {
+    cursor.style.fontWeight = '800';
     is_cursor_down = true;
-    window.addEventListener('mousemove', (evt) => {
+    let change_pos = (evt) => {
         if (is_cursor_down)  {
             const x_half = start_rect.x + start_rect.width / 2;
             const y_half = start_rect.y + start_rect.height / 2;
@@ -102,10 +132,13 @@ function drag_cursor(event, cursor, current_time_elem,cursor_rect, start_rect, t
                 prev_angle = angle;
             }
         }
-    })
+    }
+    window.addEventListener('mousemove', change_pos);
 
     window.addEventListener('mouseup', (evt) => {
         is_cursor_down = false;
+        cursor.style.fontWeight = '500';
+        window.removeEventListener('mousemove', change_pos);
     })
 }  
 

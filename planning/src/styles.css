@@ -252,13 +252,13 @@ body {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    display: block; /* DEFAULT : NONE */
+    display: none; /* DEFAULT : NONE */
     z-index: 1;
     backdrop-filter: blur(.5rem);
     
 }
 .task_form {
-    display: flex; /* DEFAULT : NONE */
+    display: none; /* DEFAULT : NONE */
     position: fixed;
     width: 80%;
     background-color: var(--bg_acc_color);
@@ -299,6 +299,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 1rem;
     /* gap: .1rem */
 }
 .text_wrap {
@@ -329,6 +330,7 @@ body {
 .form_main > .text_wrap > .title_inp:focus {
     transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-color: var(--th_color);
+
 }
 
 .form_main > .time_selectors {
@@ -393,6 +395,8 @@ body {
     
 }
 
+/* .cursor:hover {font-weight: 800;} */
+
 
 
 .due_sel {
@@ -448,4 +452,21 @@ body {
     cursor: pointer;
     width: 1.5rem;
     color-scheme: dark;
+}
+
+.task_sub_btn {
+    padding: .5rem 1rem;
+    color : var(--sec_color);
+    border : 1px solid var(--sec_color);
+    background: none;
+    font-size: 1.25rem;
+    font-family: 'Nunito', sans-serif;
+    outline: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.task_sub_btn:hover {
+    transition: 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-color: var(--sec_color);
+    color : var(--text_color);
 }
