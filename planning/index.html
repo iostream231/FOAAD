@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="stylesheet" href="/globals.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tauri App</title>
     <script type="module" src="./src/main.ts" defer></script>
@@ -107,14 +108,23 @@
             <i class="fa-solid fa-xmark" id="task_form_x"></i>
         </header>
 
-        <form class="form_main">
+        <form class="form_main" id="form_main_tsk">
             <div class="text_wrap">
                 <label for="title">Title</label>
-                <input type="title" name="title" id="name" class="title_inp" required>
+                <input type="title" name="name" id="name" class="title_inp" required>
+                <div class="title_suggestions" id="title_suggestions">
+                    <ul>
+                        <li class="current_sel">Lorem ipsum dolor sit amet.</li>
+                        <li>Deleniti deserunt dolorum ex corrupti.</li>
+                        <li>Iure eos quisquam explicabo fuga?</li>
+                        <li>Id assumenda ipsum ex. Molestiae!</li>
+                        <li>In error harum quia consectetur.</li>
+                    </ul>
+                </div>
             </div>  
             <div class="text_wrap">
                 <label for="desc">Description</label>
-                <input type="text" name="desc" id="desc" class="title_inp" required>
+                <input type="text" name="subname" id="desc" class="title_inp" required>
             </div>
 
             <div class="time_selectors">
@@ -128,13 +138,13 @@
                         <label for="state" class="dur_title">Exceptions : </label>
                         <ul>
                             <li>
-                                <input type="checkbox" name="state" id="exception">&nbsp; Brave
+                                <input type="checkbox" name="state" value="0" class="exception">&nbsp; Brave
                             </li>
                             <li>
-                                <input type="checkbox" name="" id="">&nbsp; Opera
+                                <input type="checkbox" name="state" value="1" class="exception">&nbsp; Opera
                             </li>
                             <li>
-                                <input type="checkbox" name="" id="">&nbsp; AI(Edge)
+                                <input type="checkbox" name="state" value="2" class="exception">&nbsp; AI(Edge)
                             </li>
                         </ul>  
                     </div>

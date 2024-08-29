@@ -31,6 +31,11 @@ window.addEventListener('DOMContentLoaded', () => {
             task_form.style.display = blur_container.style.display = "none";
         });
 
+
+
+        // Set the create button
+        const main_form = document.getElementById("form_main_tsk") as HTMLFormElement;
+        main_form.onsubmit = (ev) => {task_form_submit(ev, main_form)};
     })
 
 
@@ -47,6 +52,81 @@ window.addEventListener('DOMContentLoaded', () => {
 
 })
 
+
+// ###############################################################################################################################
+// form submit events
+// Todo {
+//     pub id : i64,
+//     pub name : String,
+//     pub subname : String,
+//     pub desc : String,
+//     pub state : Vec<i64>,
+//     pub refr : i64,
+//     pub start_time : i64,
+//     pub end_time : i64,
+//     pub reward_ref : i64,
+//     pub due_time : i64,
+//     pub expected_time : i64
+// }
+type Todo = {
+    id : number,
+    name : string,
+    subname : string,
+    desc : string,
+    state : Array<number>,
+    refr : number,
+    start_time : number,
+    end_time : number, 
+    reward_red : number,
+    due_time : number, 
+    expected_time : number
+}
+function task_form_submit(ev : SubmitEvent, form : HTMLFormElement){
+    ev.preventDefault();
+
+
+    let data = new FormData(form);
+    
+    // due date processing
+    let due_dates = data.getAll("due_date");
+    data.delete("due_date");
+    let due_date = new Date(`${due_dates[0]}:${due_dates[1]}`);
+    data.append("due_date", `${Math.floor(due_date.getTime() / 1e3)}`);
+
+
+    // state processing
+    let states = data.getAll("state");
+    data.delete("state");
+    let state = Array(states);
+    data.append("state", `${state}`);
+
+
+    // Time processing
+    let secs = Math.floor((prev_angle * MAX_TIME / (Math.PI * 2)) / 1000);
+    data.append('expected_time', `${secs}`);
+
+    // Adding all other fields
+    data.append('id', '0');
+    data.append('refr', '0');
+    data.append('start_time', '0');
+    data.append('end_time', '0');
+    data.append('reward_ref', '0');
+
+
+
+    // JSONify it
+    let object = {};
+    data.forEach((value, key) => {object[key] = value});
+    console.log(JSON.stringify(object));
+    
+        
+    
+}
+
+
+
+// ###############################################################################################################################
+// TASK FORM CURSOR
 const COMMON_ANGLES = [0, Math.PI/4, Math.PI / 2, 3 * Math.PI / 4, Math.PI, 3 * Math.PI / 2];
 const COMMON_THRESHOLD = Math.PI / 20;
 const ACC_COLOR = "#4b9dc9";
