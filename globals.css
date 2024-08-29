@@ -1,0 +1,40 @@
+
+/* General Styles */
+/* ############################################################################################ */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root { 
+    --bg_color : hsl(195, 18%, 4%);
+    --bg_acc_color : hsl(195, 18%, 8%);
+    --text_color : rgba(232, 235, 236, 1);
+    --text_sec_color : rgba(232, 235, 236, 0.7);
+    --prim_color : #9dbccc;
+    --sec_color : #2c576d;
+    --th_color : #4b9dc9;
+  
+    --green0 : #55efc4;
+    --green1 : #00b894;
+  
+    --yellow0 : #ffeaa7;
+    --yellow1 : #fdcb6e;
+  
+    --red0 : #ff7675;
+    --red1 : #d63031;
+}
+  
+* {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+
+    text-decoration: none;
+}
+
+
+.g1 { color : var(--green1);}
+.g0 { color : var(--green0);}
+.r0 { color : var(--red0); }
+.r1 { color : var(--red1); }
+.y0 { color : var(--yellow0);}
+.y1 { color : var(--yellow1);}
+.acc {color : var(--th_color)}

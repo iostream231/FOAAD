@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/globals.css">
+    <link rel="stylesheet" href="./src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+    <script type="module" src="./src/main.ts" defer></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <section class="set_sect">
+        <div class="set_card" id="set_card">
+            <div class="icon">
+                <i class="fa-solid fa-list"></i>
+            </div>
+            <div class="set_card_text">
+                <p class="title">Usual tasks</p>
+                <p class="desc">Add/modify/remove tasks that you often need to do.</p>
+            </div>  
+        </div>
+        <div class="set_card">
+            <div class="icon">
+                <i class="fa-solid fa-smile"></i>
+            </div>
+            <div class="set_card_text">
+                <p class="title">Usual leisures</p>
+                <p class="desc">Add/modify/remove activities that you like to do.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="set_ustask" id="set_ustask">
+        <h1 class="set_ustask_title">Usual tasks</h1>
+        <ul id="usual_tasks">
+            <li class="add_btn">
+                <input type="text" name="add_usual" id="add_ustsk" placeholder="genre::task">
+                <i class="fa-solid fa-plus" id="ustsk_add_button"></i>
+            </li>
+        </ul>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+[package]
+name = "backend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+homedir = "0.3.3"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1.0.127"
+sqlite = "0.36.1"
+tasklist = "0.2.15"
+winrt = "0.8.0"
+winrt-notification = "0.5.1"
+ntex = { version = "2.0", features = ["tokio"] }
+derive_more = { version = "1.0.0", features = ["display", "error"] }

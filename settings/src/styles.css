@@ -1,0 +1,140 @@
+body {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    /* height: 100vh; */
+}
+
+/* ################################################################################################## */
+/* Main settings */
+.set_sect {
+    width: 80%;
+    display: flex;
+    gap : 2.5rem;
+    justify-content: space-around;
+}
+
+.set_card {
+    display: flex;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.set_card:hover {
+    transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-color: var(--bg_acc_color);
+}
+.set_card > .icon {
+    font-size: 2.4rem;
+    width: 20%;
+    color  : var(--text_color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.set_card > .set_card_text { 
+    width: 80%;
+    padding: 1rem;
+}
+.set_card > .set_card_text > .title {
+    color : var(--text_color);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.set_card > .set_card_text > .desc {
+    color : var(--text_sec_color);
+    font-family: 'Nunito', sans-serif;
+}
+
+
+
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0) translate(0, -50%);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translate(0, -50%);
+    }
+}
+
+/* Usual tasks form */
+.set_ustask {
+    display: none; /* DEFAULT : NONE */
+    position: fixed;
+    width: 80%;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--bg_acc_color);
+    padding: 1rem;
+    border-radius: 4px;
+    animation: appear 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+
+
+    /* Center vertically */
+    top : 50%;
+    transform: translate(0, -50%);
+
+}
+
+
+.set_ustask_title {
+    color : var(--text_color);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    margin: .5rem;
+}
+.set_ustask > ul {
+    width: 100%;
+    background-color: var(--bg_color);
+    border-radius: 6px;
+    border : 1px solid var(--th_color);
+    padding: .25rem;
+}
+.set_ustask > ul > li {
+    display: flex;
+    padding: .5rem;
+    justify-content: space-between;
+    color : var(--text_color);
+    font-family: 'Nunito', sans-serif;
+    align-items: baseline;
+}
+.set_ustask > ul > li > .ed_icons > i {
+    padding: .25rem;
+    
+}
+.fa-pen:hover {
+    transition: 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: var(--th_color);
+    cursor: pointer;
+}
+.fa-x:hover {
+    transition: 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: var(--red1);
+    cursor: pointer;
+}
+#add_ustsk {
+    background : none;
+    border : 1px solid var(--text_sec_color);
+    padding: .5rem;
+    width: 40%;
+    outline: none;
+    color : var(--text_color);
+    font-family: 'Nunito', sans-serif;
+    border-radius: 4px;
+}
+#add_ustsk:focus {
+    border-color: var(--th_color);
+    transition: 150ms;
+}
+.fa-plus:hover {
+    transition: 150ms;
+    color : var(--green1);
+    cursor: pointer;
+}
